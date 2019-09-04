@@ -1,0 +1,15 @@
+<table class="table table-dark">
+<thead>
+    <th>name</th>
+    <th>date</th>
+    <th>note</th>
+</thead>
+<tr>
+    <td><%= @task.name %></td>
+    <td><%= @task.date %></td>
+
+
+    <td><%= simple_format(@task.note) %></td>
+</tr>
+</table>
+<%= link_to 'Home Page', tasks_path, class:'btn btn-success' %>

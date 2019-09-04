@@ -1,0 +1,24 @@
+<h1>資料清單</h1>
+
+<table class="table table-hover">
+<thead>
+    <tr>
+        <td>Name</td>
+    </tr>
+</thead>
+
+<tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.name%></td>
+      <td>
+        <%= link_to "show", task_path(task), class:"btn btn-secondary"%>
+        <%= link_to "edit", edit_task_path(task), class:'btn btn-warning'%>
+        <%= link_to "destroy", task_path(task), method: 'delete',data: { confirm: "確定刪除嗎？"}, class:'btn btn-danger'%>
+      </td>
+    </td>
+    <% end %>
+</tbody>
+</table>
+
+<%= link_to "new task", new_task_path, class:"btn btn-success"%>
